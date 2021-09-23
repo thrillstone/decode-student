@@ -1,4 +1,6 @@
+import Storybook from '../storybook/storybook';
 import styled from "styled-components";
+import {exampleSlides} from '../storybook/exampleSlides';
 
 const Center = styled.div`
   position: fixed;
@@ -12,7 +14,7 @@ const Center = styled.div`
 function Classroom() {
   return (
     <Center>
-      <div>Class 1</div>
+      <Storybook slides={exampleSlides}></Storybook>
     </Center>
   );
 }
