@@ -5,7 +5,6 @@ import Landing from './components/landing/Landing';
 import ClassroomSelector from './components/classroom/ClassroomSelector';
 import Classroom from './components/classroom/Classroom';
 
-
 function App() {
   const [user, setUser] = useState(null);
   const [nav, setNav] = useState(null);
