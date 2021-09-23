@@ -1,7 +1,19 @@
+import styled from "styled-components";
 
-function Classroom({onClasroomSelected}) {
+const Center = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
+function Classroom() {
   return (
-    <div>Class 1</div>
+    <Center>
+      <div>Class 1</div>
+    </Center>
   );
 }
   
