@@ -1,6 +1,6 @@
-import Storybook from './components/storybook/storybook';
+import Storybook from '../storybook/storybook';
 import styled from "styled-components";
-import {exampleSlides} from './components/storybook/exampleSlides';
+import {exampleSlides} from '../storybook/exampleSlides';
 
 const Center = styled.div`
   position: fixed;
