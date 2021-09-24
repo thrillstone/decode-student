@@ -21,7 +21,7 @@ const DisplayChat = (props) => {
 
   return (
     <section className="messagesWrapper">
-      <section >
+      <section className="content">
         <div onClick={()=> onClose()}>X</div>
         {messages.map((message, i) => (
           <Paragraph key={i} font>{message.message + " - " + message.name}</Paragraph>
