@@ -1,16 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import './App.css';
+import Login from './components/login/Login';
+import Landing from './components/landing/Landing';
+import Loading from './components/loading/Loading';
+import ClassroomSelector from './components/classroom/ClassroomSelector';
+import Classroom from './components/classroom/Classroom';
 import { MessagingService } from "./MessagingService";
-import React, { useContext, useState, useEffect, useRef } from "react";
-import { cleanup } from "@testing-library/react";
+import React, { useState, useEffect, useRef } from "react";
 
 const MessagingServiceContext = React.createContext();
 const messagingService = new MessagingService();
 
 function App() {
   const [loadingState, setLoadingState] = useState(true);
-
+  const [user, setUser] = useState(null);
+  const [nav, setNav] = useState(null);
+  const [classroom, setClassroom] = useState(null);
   const messageService = useRef(messagingService);
+
   useEffect(() => {
     const connectToBroker = async () => {
       await messageService.current.connect();
@@ -24,66 +30,46 @@ function App() {
   }, [messageService]);
 
   if (loadingState) {
-    return (<div> this is loading </div>);
+    return (<div> <Loading></Loading> </div>);
+  }
+  
+
+  function handleLogin(name) {
+    setUser(name);
   }
 
-  return (
-        <div className="App">
-          <MessagingServiceContext.Provider value={messagingService}>
-            <Foo />
-            <p/>
-            <Display />
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </MessagingServiceContext.Provider>
-        </div>
-  );
-}
+  function handleNavClick(nav) {
+    setNav(nav);
+  }
 
-function Foo(props) {
-  const [msg, setMsg] = useState("");
-  const messageService = useContext(MessagingServiceContext);
+  function handleClassroomSelected(nav) {
+    setClassroom(nav);
+  }
 
-  const handleChange = (e) => {
-    setMsg(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    messageService.publishMessage("foo", msg);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Publish something:
-        <input type="text" value={msg} onChange={handleChange} />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
-  );
-}
-
-function Display(props) {
-  const [msg, setMsg] = useState("");
-  const messageService = useContext(MessagingServiceContext);
-  useEffect(() => {
-    messageService.subscribeToTopic("foo", setMsg);
-  }, [messageService]);
-
-  return <div>Received message: {msg}</div>;
+  if (!user) {
+    return (
+      <Login onLogin={handleLogin}></Login>
+    );
+  } else if (!nav) {
+    return (
+      <div>
+        <h1>Welcome {user} </h1>
+        <Landing onNavClick={handleNavClick}></Landing>
+      </div>
+    )
+  } else {
+    if (!classroom) {
+      return (
+          <ClassroomSelector onClasroomSelected={handleClassroomSelected}></ClassroomSelector>
+      )
+    } else {
+      return (
+        <MessagingServiceContext.Provider value={messagingService}>
+          <Classroom></Classroom>
+        </MessagingServiceContext.Provider>
+      )
+    }
+  }
 }
 
 export default App;
