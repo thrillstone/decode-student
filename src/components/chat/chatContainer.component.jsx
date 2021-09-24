@@ -1,14 +1,17 @@
 import { useState } from "react";
 import DisplayChat from "./displayChat.component";
+// import DisplayChat from "./displayChat.component";
 import WriteChat from "./writeChat.component";
 
 const Chat = () => {
   const [messages, setMessages] = useState([])
   const handleSubmit = (message) => {
-    messages.push(message)
-    setMessages(messages)
-    console.log('updated messages:', messages)
+    const updatedMessages = [...messages]
+    updatedMessages.push(message)
+    setMessages(updatedMessages)
+    console.log('updated messages:', updatedMessages)
   };
+
 
   return (
     <section className="chat">

@@ -7,6 +7,7 @@ const WriteChat = ({ onSubmit }) => {
       e.preventDefault()
       onSubmit(message)
     }
+
   return (
     <form className="writeMessageWrapper" onSubmit={handleSubmit}>
       <label>
@@ -14,6 +15,7 @@ const WriteChat = ({ onSubmit }) => {
         <input type="text" onChange={(e) => setMessage(e.target.value)}></input>
       </label>
       <input type="submit" value="submit"></input>
+      <input type="reset" value="clear"></input>
     </form>
   );
 };
