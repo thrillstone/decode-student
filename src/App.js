@@ -1,12 +1,12 @@
 import './App.css';
-import DisplayMessage from './components/messageBoard/displayMessage.component';
+import Chat from './components/chatContainer.component';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <DisplayMessage />
+        <Chat />
       </header>
     </div>
   );
