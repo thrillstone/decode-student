@@ -42,6 +42,14 @@
     float: left;
 }
 
+.pollButton:active {
+    border: 1px solid #E8067B;
+}
+
+.pollButton:hover {
+    border: 1px solid #E8067B;
+}
+
 .submit-btn {
     background: #E8067B;
     border-radius: 10px;
@@ -56,6 +64,16 @@
     max-width: 370px;
     float: left;
 
+}
+
+.submit-btn:active {
+    background: #FBFBFB;
+    color: #E8067B;
+}
+
+.submit-btn:hover {
+    background: #FBFBFB;
+    color: #E8067B;
 }
 
 .pollButtonText {
