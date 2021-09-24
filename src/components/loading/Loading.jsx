@@ -17,7 +17,7 @@ const Spin = styled.div`
 	animation-name: ${spin};
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear; 
+	animation-timing-function: linear;
 `
 
 function Loading() {
