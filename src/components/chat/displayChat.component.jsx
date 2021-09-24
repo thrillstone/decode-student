@@ -1,5 +1,5 @@
-const DisplayChat = (messages) => {
-    messages = [
+const DisplayChat = () => {
+    const messages = [
         'howdy',
         'test 2',
         'test 3'

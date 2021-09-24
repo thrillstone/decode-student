@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DisplayChat from "./chat/displayChat.component";
-import WriteChat from "./chat/writeChat.component";
+import DisplayChat from "./displayChat.component";
+import WriteChat from "./writeChat.component";
 
 const Chat = () => {
   const [messages, setMessages] = useState([])
@@ -8,7 +8,7 @@ const Chat = () => {
   const handleSubmit = (message) => {
     setMessages(messages.push(message))
     console.log('message', message)
-    console.log('messages', messages)
+    // console.log('messages', messages)
   };
 
   return (
