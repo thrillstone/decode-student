@@ -1,19 +1,20 @@
 import { useState } from "react";
-import DisplayChat from "./messageBoard/displayChat.component";
-import WriteChat from "./messageBoard/writeChat.component";
+import DisplayChat from "./chat/displayChat.component";
+import WriteChat from "./chat/writeChat.component";
 
 const Chat = () => {
-  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([])
 
-  const collectMessage = (userMessageInput) => {
-    setMessage(userMessageInput);
-    console.log("collectedMessage", message);
+  const handleSubmit = (message) => {
+    setMessages(messages.push(message))
+    console.log('message', message)
+    console.log('messages', messages)
   };
 
   return (
     <section className="chat">
-      <DisplayChat collectMessage={collectMessage}/>
-      <WriteChat collectMessage={collectMessage} />
+      <DisplayChat />
+      <WriteChat onSubmit={handleSubmit} />
     </section>
   );
 };
