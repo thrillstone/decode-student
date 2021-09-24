@@ -6,6 +6,7 @@ import ClassroomSelector from './components/classroom/ClassroomSelector';
 import Classroom from './components/classroom/Classroom';
 import { MessagingService } from "./MessagingService";
 import React, { useState, useEffect, useRef } from "react";
+import FullScreen from './components/styles/FullScreen';
 
 const MessagingServiceContext = React.createContext();
 const messagingService = new MessagingService();
@@ -48,7 +49,9 @@ function App() {
 
   if (!user) {
     return (
-      <Login onLogin={handleLogin}></Login>
+      <FullScreen>
+        <Login onLogin={handleLogin}></Login>
+      </FullScreen>
     );
   } else if (!nav) {
     return (

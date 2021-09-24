@@ -84,7 +84,7 @@ export class MessagingService {
 		}
 	}
 	disconnect() {
-		this.session.exit();
+		this.session.disconnect();
 		console.log("Disconnecting from the solace message router");
 	}
 }

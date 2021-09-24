@@ -1,13 +1,5 @@
 import styled, {keyframes} from "styled-components";
-
-const Center = styled.div`
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-`;
+import FullScreen from "../styles/FullScreen";
 
 const spin = keyframes`
     from {
@@ -30,9 +22,9 @@ const Spin = styled.div`
 
 function Loading() {
   return (
-    <Center>
+    <FullScreen>
       <Spin></Spin>
-    </Center>
+    </FullScreen>
   );
 }
   

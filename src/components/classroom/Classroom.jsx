@@ -1,21 +1,12 @@
 import Storybook from '../storybook/storybook';
-import styled from "styled-components";
 import {exampleSlides} from '../storybook/exampleSlides';
-
-const Center = styled.div`
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-`;
+import FullScreen from '../styles/FullScreen';
 
 function Classroom() {
   return (
-    <Center>
+    <FullScreen>
       <Storybook slides={exampleSlides}></Storybook>
-    </Center>
+    </FullScreen>
   );
 }
   
