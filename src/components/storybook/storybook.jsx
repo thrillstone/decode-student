@@ -1,28 +1,29 @@
 import React, {useState} from 'react';
-import Viewer from "./viewer";
-import Navigation from "./navigation"
+import Viewer from './viewer';
+import styled from 'styled-components';
+import Emotes from './emotes'
+import Header from './header'
+import DinosaurClass from './assets/dinosaurClass';
 
 const Storybook = (props) => {
+    const StorybookDiv = styled.div`
+        width: 100%;
+        height: 60%;
+        text-align: center;
+        position: fixed;
+        top: 0;
+    `;
+
 	const [slides] = useState(props.slides ? props.slides : []);
     const [currentSlide, setCurrentSlide] = useState(props.currentSlide ? props.currentSlide : 0);
-    
-    const nextSlide = () => {
-        if ((slides.length - currentSlide) > 1){
-            setCurrentSlide(currentSlide + 1);
-        }
-    }
-
-    const previousSlide = () => {
-        if (currentSlide > 0){
-            setCurrentSlide(currentSlide - 1);
-        }
-    }
 
 	return(
-        <>
+        <StorybookDiv>
+            <Header/>
             <Viewer slideData={slides[currentSlide]}></Viewer>
-            <Navigation nextSlide={nextSlide} previousSlide={previousSlide}/>
-        </>
+            <Emotes/>
+            <DinosaurClass/>
+        </StorybookDiv>
     );
 };
 
