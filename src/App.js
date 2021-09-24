@@ -7,8 +7,10 @@ import Classroom from './components/classroom/Classroom';
 import { MessagingService } from "./MessagingService";
 import React, { useState, useEffect, useRef } from "react";
 import FullScreen from './components/styles/FullScreen';
+import { v4 as uuidv4 } from "uuid";
 
 export const MessagingServiceContext = React.createContext();
+export const UserContext = React.createContext();
 const messagingService = new MessagingService();
 
 function App() {
@@ -34,10 +36,17 @@ function App() {
     return (<div> <Loading></Loading> </div>);
   }
   
-
   function handleLogin(name) {
-    setUser(name);
+    createUser(name);
   }
+  
+  function createUser(name) {
+    const createUuid = uuidv4();
+    setUser({
+      userId: createUuid,
+      name: name,
+    });
+  };
 
   function handleNavClick(nav) {
     setNav(nav);
@@ -56,7 +65,7 @@ function App() {
   } else if (!nav) {
     return (
       <div>
-        <h1>Welcome {user} </h1>
+        <h1>Welcome {user.name} </h1>
         <Landing onNavClick={handleNavClick}></Landing>
       </div>
     )
@@ -67,9 +76,11 @@ function App() {
       )
     } else {
       return (
-        <MessagingServiceContext.Provider value={messagingService}>
-          <Classroom></Classroom>
-        </MessagingServiceContext.Provider>
+        <UserContext.Provider value={user}>
+          <MessagingServiceContext.Provider value={messagingService} >
+            <Classroom      ></Classroom>
+          </MessagingServiceContext.Provider>
+        </UserContext.Provider>
       )
     }
   }
