@@ -1,15 +1,17 @@
 const DisplayChat = (props) => {
-    const {...showChat} = props
-    // const messages = [
-    //     'howdy',
-    //     'test 2',
-    //     'test 3'
-    // ]
+    const messages = props
+    console.log('Messages from displayChat', messages);
+
+    const TESTING = [
+      'one',
+      'two',
+      'three'
+    ]
 
   return (
     <section className="messagesWrapper">
       <h5>Message Board</h5>
-        <section>{showChat.map( e => <p>{e}</p>)}</section>
+        <section>{TESTING.map( e => <p>{e}</p>)}</section>
     </section>
   );
 };
