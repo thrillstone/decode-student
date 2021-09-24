@@ -7,7 +7,6 @@ function Landing({onNavClick}) {
 
   return (
     <div>
-      <div>Hi {user.name}</div>
       <div onClick={() => onNavClick('classes')}>Classes</div>
       <div onClick={() => onNavClick('trophies')}>Trophies</div>
     </div>

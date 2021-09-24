@@ -5,6 +5,7 @@ import MessagingContainer from './MessagingContainer';
 import { useContext, useEffect, useState } from 'react';
 import { MessagingServiceContext } from '../../App';
 import Poll from '../poll/Poll';
+import Chat from '../chat/chatContainer.component';
 
 const data = {
   "question":"What do you eat?",
