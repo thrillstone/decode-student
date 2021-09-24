@@ -3,7 +3,6 @@ import DisplayChat from "./displayChat.component";
 import WriteChat from "./writeChat.component";
 import { MessagingServiceContext, UserContext } from "../../App";
 
-
 const Chat = () => {
   // Collect userId data
   const user = useContext(UserContext)

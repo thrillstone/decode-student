@@ -11,7 +11,7 @@ const WriteChat = ({ onSubmit }) => {
   return (
     <form className="writeMessageWrapper" onSubmit={handleSubmit}>
       <label>
-        Write Your Message:  
+        Write a comment  
         <input type="text" onChange={(e) => setMessage(e.target.value)}></input>
       </label>
       <input type="submit" value="submit"></input>
