@@ -2,6 +2,7 @@ import Storybook from '../storybook/storybook';
 import {exampleSlides} from '../storybook/exampleSlides';
 import Chat from '../chat/chatContainer.component';
 import FullScreen from '../styles/FullScreen';
+import MessagingContainer from './MessagingContainer';
 import { useContext, useEffect, useState } from 'react';
 import { MessagingServiceContext } from '../../App';
 import Poll from '../poll/Poll';
@@ -35,6 +36,7 @@ function Classroom() {
   return (
     <FullScreen>
       <Storybook slides={exampleSlides}></Storybook>
+      <MessagingContainer/>
       <Chat />
       {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
     </FullScreen>
