@@ -1,5 +1,4 @@
 import Storybook from '../storybook/storybook';
-import {exampleSlides} from '../storybook/exampleSlides';
 import FullScreen from '../styles/FullScreen';
 import MessagingContainer from './MessagingContainer';
 import { useContext, useEffect, useState } from 'react';
@@ -36,7 +35,7 @@ function Classroom() {
 
   return (
     <FullScreen>
-      <Storybook slides={exampleSlides}></Storybook>
+      <Storybook></Storybook>
       <MessagingContainer/>
       <MessagingServiceContext.Provider value={messagingService}>
         {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
