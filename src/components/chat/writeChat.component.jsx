@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './chat.styles.css';
 
 const WriteChat = ({ onSubmit }) => {
     const [message, setMessage] = useState("");
@@ -10,12 +11,8 @@ const WriteChat = ({ onSubmit }) => {
 
   return (
     <form className="writeMessageWrapper" onSubmit={handleSubmit}>
-      <label>
-        Write Your Message:  
-        <input type="text" onChange={(e) => setMessage(e.target.value)}></input>
-      </label>
-      <input type="submit" value="submit"></input>
-      <input type="reset" value="clear"></input>
+      <input class="input" placeholder="Write a comment"type="text" onChange={(e) => setMessage(e.target.value)}></input>
+      <input type="submit" value="submit" class="button"></input>
     </form>
   );
 };
