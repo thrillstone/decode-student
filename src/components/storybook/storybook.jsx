@@ -15,7 +15,7 @@ const Storybook = (props) => {
     `;
 
 	const [slides] = useState(props.slides ? props.slides : []);
-    const [currentSlide, setCurrentSlide] = useState(props.currentSlide ? props.currentSlide : 0);
+    const [currentSlide] = useState(props.currentSlide ? props.currentSlide : 0);
 
 	return(
         <StorybookDiv>

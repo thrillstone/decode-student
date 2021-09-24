@@ -7,21 +7,22 @@ import { MessagingServiceContext } from '../../App';
 import Poll from '../poll/Poll';
 
 const data = {
-  "question":"hi",
-  "pollId":"011",
+  "question":"What do you eat?",
+  "pollId":"001",
   "choices":[
     {
-      "choiceId":"001",
-      "description":"hindn"
+      "answer":"Meat, like a carnivore!"
     },
     {
-      "choiceId":"0012",
-      "description":"hiffn"
+      "answer":"Veggies, like a herbivore!"
+    },
+    {
+      "answer":"Both, like an omnivore!"
     }
   ]
 }
 
-const studentId = "abjcs"
+const studentId = "011"
 function Classroom() {
   
   const [pollId, setPollId] = useState('');
