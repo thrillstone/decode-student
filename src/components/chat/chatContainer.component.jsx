@@ -28,8 +28,8 @@ const Chat = () => {
 
   return (
     <section className="chat">
-      <DisplayChat messages={messages} />
       <WriteChat onSubmit={handleSubmit} />
+      <DisplayChat messages={messages} />
     </section>
   );
 };

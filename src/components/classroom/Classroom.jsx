@@ -37,7 +37,6 @@ function Classroom() {
     <FullScreen>
       <Storybook slides={exampleSlides}></Storybook>
       <MessagingContainer/>
-      <Chat />
       {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
     </FullScreen>
   );

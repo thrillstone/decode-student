@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Chat from '../chat/chatContainer.component';
 
 const MessagingContainer = () => {
     const MessagingDiv = styled.div`
@@ -11,7 +12,9 @@ const MessagingContainer = () => {
     `;
 
 	return(
-        <MessagingDiv>Messaging placeholder</MessagingDiv>
+        <MessagingDiv>
+            < Chat/>
+        </MessagingDiv>
     );
 };
 

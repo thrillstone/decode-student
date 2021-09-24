@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import styled, { css } from "styled-components";
+import './chat.styles.css';
 
 const DisplayChat = (props) => {
   const { messages } = props;
@@ -20,7 +21,7 @@ const DisplayChat = (props) => {
 
   return (
     <section className="messagesWrapper">
-      <section>
+      <section >
         {messages.map((message, i) => (
           <Paragraph key={i} font>{message.message + " - " + message.name}</Paragraph>
         ))}
