@@ -10,7 +10,8 @@ const ClassLayout = styled.div`
 `;
 
 const Layout = styled.div`
-  margin: 5vw;
+  margin: 5vw 0;
+  padding: 0 5vw;
   background: #FAFAFA;
 `;
 
@@ -26,10 +27,10 @@ function ClassroomSelector({onClasroomSelected}) {
     <Layout>
       <Title>Your Classes</Title>
       <ClassLayout>
-        <Door onClick={() => onClasroomSelected(1)} subject="Science" time="10:00"></Door>
-        <Door onClick={() => onClasroomSelected(2)} subject="Math"></Door>
-        <Door onClick={() => onClasroomSelected(3)} subject="English"></Door>
-        <Door onClick={() => onClasroomSelected(4)} subject="History"></Door>
+        <Door onEnter={() => onClasroomSelected(1)} subject="Science" time="10:00"></Door>
+        <Door onEnter={() => onClasroomSelected(2)} subject="Math"></Door>
+        <Door onEnter={() => onClasroomSelected(3)} subject="English"></Door>
+        <Door onEnter={() => onClasroomSelected(4)} subject="History"></Door>
       </ClassLayout>
     </Layout>
   );
