@@ -35,11 +35,10 @@
     width: 90%;
     max-width: 370px;
     height: 140px;
-    margin-left: 5%;
+    margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5%;
-    margin-top: 2.5%;
-    float: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .pollButton:active {
@@ -58,7 +57,7 @@
     background: #E8067B;
     border-radius: 10px;
     width: 90%;
-    margin-left: 5%;
+    margin-left: auto;
     margin-right: auto;
     color: #FFFFFF;
     text-align: center;
@@ -66,8 +65,6 @@
     line-height: 50px;
     height: 50px;
     max-width: 370px;
-    float: left;
-
 }
 
 .submit-btn:active {
@@ -79,8 +76,6 @@
     background: #FBFBFB;
     color: #E8067B;
 }
-
-
 
 .pollButtonText {
     font-style: normal;
