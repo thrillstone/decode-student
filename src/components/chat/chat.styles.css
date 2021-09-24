@@ -19,5 +19,8 @@
 }
 
 .messagesWrapper {
-    visibility: hidden;
+    overflow: scroll;
+    position: fixed;
+    bottom: 5rem;
+    height: 60%;
 }
