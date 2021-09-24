@@ -39,6 +39,7 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .pollButton:active {
@@ -65,16 +66,15 @@
     line-height: 50px;
     height: 50px;
     max-width: 370px;
+    cursor: pointer;
 }
 
 .submit-btn:active {
-    background: #FBFBFB;
-    color: #E8067B;
+    background: #ff57ae;
 }
 
 .submit-btn:hover {
-    background: #FBFBFB;
-    color: #E8067B;
+    background: #ff57ae;
 }
 
 .pollButtonText {
