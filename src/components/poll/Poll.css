@@ -43,10 +43,14 @@
 }
 
 .pollButton:active {
-    border: 1px solid #E8067B;
+    border: 1px solid #da167b;
 }
 
 .pollButton:hover {
+    border: 1px solid #da167b;
+}
+
+.pollButtonActivated {
     border: 1px solid #E8067B;
 }
 
@@ -75,6 +79,8 @@
     background: #FBFBFB;
     color: #E8067B;
 }
+
+
 
 .pollButtonText {
     font-style: normal;
