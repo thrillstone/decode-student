@@ -9,7 +9,7 @@ function onSubmit(pollId, choiceId, studentId) {
     console.log(reply)
 }
 
-function Poll(data, studentId) {
+function Poll({data, studentId}) {
     const [selectedChoice, setChoice] = useState(data.choices[0].choiceId);
 
     function radioButtons(data) {
