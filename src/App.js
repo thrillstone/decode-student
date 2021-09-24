@@ -36,15 +36,17 @@ function App() {
   
   function handleLogin(name) {
     createUser(name);
-    messagingService.publishMessage("user", user);
   }
   
   function createUser(name) {
     const createUuid = uuidv4();
-    setUser({
+    const newUser = {
       userId: createUuid,
       name: name,
-    });
+    };
+
+    setUser(newUser);
+    messagingService.publishMessage("user", newUser);
   };
 
   function handleClassroomSelected(nav) {
