@@ -8,7 +8,7 @@ import { MessagingService } from "./MessagingService";
 import React, { useState, useEffect, useRef } from "react";
 import FullScreen from './components/styles/FullScreen';
 
-const MessagingServiceContext = React.createContext();
+export const MessagingServiceContext = React.createContext();
 const messagingService = new MessagingService();
 
 function App() {
