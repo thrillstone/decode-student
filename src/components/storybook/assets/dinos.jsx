@@ -7,8 +7,6 @@ const EmotesButton = styled.svg`
     width: 70px;
     height: 70px;
     display: inline-block;
-    margin-left: 3%;
-    margin-right: 3%;
 `;
 
 export const Dino1 = () => {
