@@ -11,13 +11,16 @@ const data = {
   "pollId":"001",
   "choices":[
     {
-      "answer":"Meat, like a carnivore!"
+      "answer":"Meat, like a carnivore!",
+      "option":"A"
     },
     {
-      "answer":"Veggies, like a herbivore!"
+      "answer":"Veggies, like a herbivore!",
+      "option":"B"
     },
     {
-      "answer":"Both, like an omnivore!"
+      "answer":"Both, like an omnivore!",
+      "option":"C"
     }
   ]
 }
