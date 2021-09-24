@@ -1,6 +1,5 @@
 import './App.css';
 import Login from './components/login/Login';
-import Landing from './components/landing/Landing';
 import Loading from './components/loading/Loading';
 import ClassroomSelector from './components/classroom/ClassroomSelector';
 import Classroom from './components/classroom/Classroom';
@@ -16,7 +15,6 @@ const messagingService = new MessagingService();
 function App() {
   const [loadingState, setLoadingState] = useState(true);
   const [user, setUser] = useState(null);
-  const [nav, setNav] = useState(null);
   const [classroom, setClassroom] = useState(null);
   const messageService = useRef(messagingService);
 
@@ -49,10 +47,6 @@ function App() {
     });
   };
 
-  function handleNavClick(nav) {
-    setNav(nav);
-  }
-
   function handleClassroomSelected(nav) {
     setClassroom(nav);
   }
@@ -63,15 +57,6 @@ function App() {
         <Login onLogin={handleLogin}></Login>
       </FullScreen>
     );
-  } else if (!nav) {
-    return (
-      <UserContext.Provider value={user}>
-        <div>
-          <h1>Welcome {user.name} </h1>
-          <Landing onNavClick={handleNavClick}></Landing>
-        </div>
-      </UserContext.Provider>
-    )
   } else {
     if (!classroom) {
       return (

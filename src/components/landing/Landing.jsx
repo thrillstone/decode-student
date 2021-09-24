@@ -1,9 +1,5 @@
-import { useContext } from "react";
-import { UserContext } from "../../App";
-
 
 function Landing({onNavClick}) {
-  const user = useContext(UserContext);
 
   return (
     <div>
