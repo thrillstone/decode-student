@@ -36,7 +36,9 @@ function Classroom() {
     <FullScreen>
       <Storybook slides={exampleSlides}></Storybook>
       <MessagingContainer/>
-      {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
+      <MessagingServiceContext.Provider value={messagingService}>
+        {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
+      </MessagingServiceContext.Provider>
     </FullScreen>
   );
 }
