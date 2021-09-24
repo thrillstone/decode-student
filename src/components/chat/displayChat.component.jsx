@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import './chat.styles.css';
 
 const DisplayChat = (props) => {
-  const { messages } = props;
+  const { messages, onClose } = props;
   const user = useContext(UserContext);
   console.log('usersid', user);
   const currentUser = user.userId;
@@ -21,7 +21,8 @@ const DisplayChat = (props) => {
 
   return (
     <section className="messagesWrapper">
-      <section >
+      <section className="content">
+        <div onClick={()=> onClose()}>X</div>
         {messages.map((message, i) => (
           <Paragraph key={i} font>{message.message + " - " + message.name}</Paragraph>
         ))}

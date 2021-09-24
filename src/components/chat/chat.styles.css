@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 1em;
     margin-left: 1rem;
-    width: 1000px;
+    width: 90vw;
 }
 
 .input .button{
@@ -13,11 +13,26 @@
   background: whitesmoke;
 }
 
+.input{
+    min-width: 80vw;
+    height: 43m;
+}
+
 .button{
     position:fixed;
     right: 1rem;
 }
 
 .messagesWrapper {
-    visibility: hidden;
+    overflow: scroll;
+    position: fixed;
+    bottom: 5rem;
+    height: 60%;
+    width: 100vw;
+    background: white;
+    /* padding: 1rem; */
+}
+
+.content {
+    margin: 1rem;
 }
