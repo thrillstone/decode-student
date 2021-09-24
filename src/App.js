@@ -38,6 +38,7 @@ function App() {
   
   function handleLogin(name) {
     createUser(name);
+    messagingService.publishMessage("user", user);
   }
   
   function createUser(name) {
@@ -64,10 +65,12 @@ function App() {
     );
   } else if (!nav) {
     return (
-      <div>
-        <h1>Welcome {user.name} </h1>
-        <Landing onNavClick={handleNavClick}></Landing>
-      </div>
+      <UserContext.Provider value={user}>
+        <div>
+          <h1>Welcome {user.name} </h1>
+          <Landing onNavClick={handleNavClick}></Landing>
+        </div>
+      </UserContext.Provider>
     )
   } else {
     if (!classroom) {

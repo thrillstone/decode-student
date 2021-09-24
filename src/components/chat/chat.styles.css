@@ -23,4 +23,6 @@
     position: fixed;
     bottom: 5rem;
     height: 60%;
+    width: 100vw;
+    background: white;
 }
