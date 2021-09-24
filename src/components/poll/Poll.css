@@ -1,8 +1,8 @@
 .pollContainer {
     position: fixed;
-    background: #E5E5E5;
-    width: 90%;
-    height: 90%;
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
 }
 
 .pollTitle {
@@ -29,27 +29,33 @@
 
 .pollButton {
     background: #FBFBFB;
-    border: 1px solid #E8067B;
+    border: 1px solid #FBFBFB;
     box-sizing: border-box;
     border-radius: 10px;
     width: 90%;
+    max-width: 370px;
     height: 140px;
-    margin-left: auto;
+    margin-left: 5%;
     margin-right: auto;
     margin-bottom: 5%;
     margin-top: 2.5%;
+    float: left;
 }
 
 .submit-btn {
     background: #E8067B;
     border-radius: 10px;
     width: 90%;
-    margin-left: auto;
+    margin-left: 5%;
     margin-right: auto;
     color: #FFFFFF;
     text-align: center;
     vertical-align: middle;
     line-height: 50px;
+    height: 50px;
+    max-width: 370px;
+    float: left;
+
 }
 
 .pollButtonText {
@@ -58,6 +64,10 @@
     font-size: 20px;
     line-height: 150%;
     color: #E8067B;
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 .pollButtonImg {
     height: 80%;

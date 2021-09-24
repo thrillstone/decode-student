@@ -9,24 +9,21 @@ import Poll from '../poll/Poll';
 
 const data = {
   "question":"What do you eat?",
-  "pollId":"011",
+  "pollId":"001",
   "choices":[
     {
-      "choiceId":"001",
-      "description":"Meat, like a carnivore!"
+      "answer":"Meat, like a carnivore!"
     },
     {
-      "choiceId":"0012",
-      "description":"Veggies, like a herbivore!"
+      "answer":"Veggies, like a herbivore!"
     },
     {
-      "choiceId":"0012",
-      "description":"Both, like an omnivore!"
+      "answer":"Both, like an omnivore!"
     }
   ]
 }
 
-const studentId = "abjcs"
+const studentId = "011"
 function Classroom() {
   
   const [pollId, setPollId] = useState('');
