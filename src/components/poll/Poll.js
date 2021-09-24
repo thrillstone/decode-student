@@ -1,36 +1,53 @@
-import React, { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { MessagingServiceContext } from '../../App';
+import './Poll.css';
 
-function onSubmit(pollId, choiceId, studentId) {
+function OnSubmit(pollId, choiceId, studentId) {
+    const messagingService = useContext(MessagingServiceContext);
     const reply = {
-        "studentId": studentId,
-        "pollId": pollId,
-        "choiceId": choiceId
-    }
-    console.log(reply)
+        "userId": studentId,
+        "pollId": "001",
+        "answer": choiceId,
+        "questionNumber": pollId,
+    };
+    console.log(reply);
+    messagingService.publishMessage("workbook/poll/answer", reply);
+    
 }
 
 function Poll({data, studentId}) {
     const [selectedChoice, setChoice] = useState(data.choices[0].choiceId);
 
     function radioButtons(data) {
-        let choices = [];
-        for (let i = 0; i < data.choices.length; i++) {
-            choices.push(<div className="radio-btn">
-                <input type="radio" value={data.choices[i].choiceId} onChange={() => setChoice(data.choices[i].choiceId)} checked={data.choices[i].choiceId === selectedChoice}/>
-                <label>{data.choices[i].description}</label></div>
-                );
-        }
-        return choices
+        return (
+            <div>
+                <div className="pollButton" onChange={() => setChoice(data.choices[0].choiceId)}>
+                    <div className="pollButtonText">{data.choices[0].description}</div>
+                    <div className="pollButtonImg"><img className="image" src='Carnivore.svg'></img></div>
+                </div>
+                <div className="pollButton" onChange={() => setChoice(data.choices[1].choiceId)}>
+                    <div className="pollButtonText">{data.choices[1].description}</div>
+                    <div className="pollButtonImg"><img className="image" src='Herbivore.svg'></img></div>
+                </div>
+                <div className="pollButton" onChange={() => setChoice(data.choices[2].choiceId)}>
+                    <div className="pollButtonText">{data.choices[2].description}</div>
+                    <div className="pollButtonImg"><img className="image" src='Omnivore.svg'></img></div>
+                </div>
+            </div>
+        )
     }
 
     return(
-        <div>
-            <h3>Poll</h3>
-            <h4>{data.question}</h4>
+        <div className="pollContainer">
+            <div className="wrapper">
+                <div className="pollTitle">Poll</div>
+                <div className="question">{data.question}</div>
+            </div>
+            
 
             <form>
                 {radioButtons(data)}
-                <button type="submit" onClick={() => {onSubmit(data.pollId, selectedChoice, studentId)}}>Submit</button>
+                <div className="submit-btn" type="submit" onClick={() => {OnSubmit(data.pollId, selectedChoice, studentId)}}>Submit</div>
             </form>
 
         </div>

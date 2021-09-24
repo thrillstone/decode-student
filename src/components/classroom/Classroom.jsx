@@ -8,16 +8,20 @@ import { MessagingServiceContext } from '../../App';
 import Poll from '../poll/Poll';
 
 const data = {
-  "question":"hi",
+  "question":"What do you eat?",
   "pollId":"011",
   "choices":[
     {
       "choiceId":"001",
-      "description":"hindn"
+      "description":"Meat, like a carnivore!"
     },
     {
       "choiceId":"0012",
-      "description":"hiffn"
+      "description":"Veggies, like a herbivore!"
+    },
+    {
+      "choiceId":"0012",
+      "description":"Both, like an omnivore!"
     }
   ]
 }
@@ -38,7 +42,9 @@ function Classroom() {
       <Storybook slides={exampleSlides}></Storybook>
       <MessagingContainer/>
       <Chat />
-      {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
+      <MessagingServiceContext.Provider value={messagingService}>
+        {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
+      </MessagingServiceContext.Provider>
     </FullScreen>
   );
 }
