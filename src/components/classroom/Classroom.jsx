@@ -38,7 +38,7 @@ function Classroom() {
       <Storybook></Storybook>
       <MessagingContainer/>
       <MessagingServiceContext.Provider value={messagingService}>
-        {pollId !== '' && <Poll data={data} studentId={studentId}></Poll>}
+        {pollId !== '' && <Poll data={data} studentId={studentId} setPollId={setPollId}></Poll>}
       </MessagingServiceContext.Provider>
     </FullScreen>
   );
